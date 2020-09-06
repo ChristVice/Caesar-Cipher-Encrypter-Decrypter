@@ -4,7 +4,7 @@ import math
 def encrypter(text, alphabet, positionShift):
     encryptedText = ""
     for letter in text.lower():
-        if(letter == " "):
+        if letter == " ":
             encryptedText += " "
         else:
             letterIndex = alphabet.index(letter)
@@ -16,7 +16,7 @@ def encrypter(text, alphabet, positionShift):
 def decrypter(text, alphabet, positionShift):
     decryptedText = ""
     for letter in text.lower():
-        if(letter == " "):
+        if letter == " ":
             decryptedText += " "
         else:
             letterIndex = alphabet.index(letter)
@@ -25,8 +25,7 @@ def decrypter(text, alphabet, positionShift):
     return decryptedText
 
 
-if __name__ == "__main__":
-
+def main():
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".lower()
     positionShift = 2
 
@@ -35,3 +34,7 @@ if __name__ == "__main__":
 
     decrypt = input("Enter text to decrypt: ")
     print(decrypter(decrypt, alphabet, positionShift))
+
+
+if __name__ == "__main__":
+    main()
