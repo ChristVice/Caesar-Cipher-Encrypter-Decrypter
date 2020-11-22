@@ -27,13 +27,21 @@ def decrypter(text, alphabet, positionShift):
 
 def main():
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".lower()
-    positionShift = 2
+    print("This is the alphabet being used: "+alphabet)
 
-    encrypt = input("Enter text to encrypt: ")
-    print(encrypter(encrypt, alphabet, positionShift))
+    changeAlpha = input("Do you want a new alphabet? [y/n]")
+    if(changeAlpha.lower() == "y"):
+        alphabet = input("Enter new alphabet: ")
+    else:
+        positionShift = int(input("Enter # of shift positions: "))
 
-    decrypt = input("Enter text to decrypt: ")
-    print(decrypter(decrypt, alphabet, positionShift))
+        decision = input("Do you want to Encrypt? [y/n]")
+        if(decision.lower() == "y"):
+            encrypt = input("Enter text to encrypt: ")
+            print(encrypter(encrypt, alphabet, positionShift))
+        else:
+            decrypt = input("Enter text to decrypt: ")
+            print(decrypter(decrypt, alphabet, positionShift))
 
 
 if __name__ == "__main__":
